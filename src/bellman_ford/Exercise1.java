@@ -34,8 +34,9 @@ public class Exercise1 {
 		BellmanFord.printNodes(nodes);
 		
 		//bellman-ford algorithm
+		boolean changed;
 		for ( int i = 0; i < nodes.length-1; i++) {
-			boolean changed = false;
+			changed = false;
 			for ( int j = 0; j < edges.length; j++) {
 				changed = BellmanFord.relax(edges[j], changed);
 			}
