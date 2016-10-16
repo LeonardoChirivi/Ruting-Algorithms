@@ -1,7 +1,6 @@
 package bellman_ford;
 
-import graph_entities.Edge;
-import graph_entities.Node;
+import graph_entities.*;
 
 public class Exercise1 {
 	public static void main(String[] args) {
@@ -32,16 +31,10 @@ public class Exercise1 {
 		//node name, node weight, predecessor
 		System.out.println("Initial nodes states:");
 		BellmanFord.printNodes(nodes);
-		
+
 		//bellman-ford algorithm
-		boolean changed;
-		for ( int i = 0; i < nodes.length-1; i++) {
-			changed = false;
-			for ( int j = 0; j < edges.length; j++) {
-				changed = BellmanFord.relax(edges[j], changed);
-			}
-			if(!changed) break;
-		}
+		BellmanFord.shortestPath(nodes, edges);
+		
 		//print nodes with shortest paths
 		System.out.println("Shortest path table from root A:");
 		BellmanFord.printNodes(nodes);
