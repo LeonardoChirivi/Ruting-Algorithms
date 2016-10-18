@@ -26,17 +26,19 @@ public class Exercise1 {
 				new Edge(nodes[0], nodes[2], 8),//A-C
 				new Edge(nodes[0], nodes[1], 7),//A-B
 				new Edge(nodes[1], nodes[5], 2) /*B-F*/};
-
+		
+		Graph graph = new Graph(nodes, edges);
+		
 		//print nodes state in form:
 		//node name, node weight, predecessor
 		System.out.println("Initial nodes states:");
-		BellmanFord.printNodes(nodes);
+		graph.printNodes(nodes);
 
 		//bellman-ford algorithm
-		BellmanFord.shortestPath(nodes, edges);
+		graph.bellmanFordShortestPath(nodes, edges);
 		
 		//print nodes with shortest paths
 		System.out.println("Shortest path table from root A:");
-		BellmanFord.printNodes(nodes);
+		graph.printNodes(nodes);
 	}
 }
