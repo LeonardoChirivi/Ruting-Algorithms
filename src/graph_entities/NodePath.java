@@ -16,23 +16,19 @@ public class NodePath extends Node{
 		this.weight = weight;
 	}
 
-	public Node getPredecessor() {
-		return predecessor;
-	}
-
 	public void setPredecessor(Node predecessor) {
 		this.predecessor = predecessor;
 	}
 
 	@Override
 	public String toString() {
-		String name;
+		String pred;
 		if( predecessor == null ){
-			name = "0";
+			pred = "0";
 		} else {
-			name = predecessor.getName();
+			pred = predecessor.getName();
 		}
-		String s = this.getName()+", "+this.weight+", "+name;
+		String s = this.getName()+", "+this.weight+", "+pred;
 		return s;
 	}
 }
