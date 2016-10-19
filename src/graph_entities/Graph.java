@@ -25,12 +25,6 @@ public class Graph {
 		}
 	}
 	
-	public void printNodes(NodePath[] n) {
-		for(Node node : n)
-			System.out.print(node.toString()+" | ");
-		System.out.println("\n");
-	}
-	
 	public void bellmanFordShortestPath(NodePath[] nodes, Edge[] edges){
 		boolean changed;
 		for (int i = 0; i < nodes.length; i++) {
@@ -40,5 +34,14 @@ public class Graph {
 			}
 			if(!changed)break;
 		}
+	}
+	
+	public String toString(Node[] n) {
+		StringBuilder s = new StringBuilder();
+		
+		for(Node node : n)
+			s.append(node.toString()+" | ");
+		
+		return s.toString();
 	}
 }

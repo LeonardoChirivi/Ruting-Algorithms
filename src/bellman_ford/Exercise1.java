@@ -37,13 +37,13 @@ public class Exercise1 {
 		//print nodes state in form:
 		//node name, node weight, predecessor
 		System.out.println("Initial nodes states:");
-		graph.printNodes(nodePaths);
+		System.out.println(graph.toString(nodePaths));
 
 		//bellman-ford algorithm
 		graph.bellmanFordShortestPath(nodePaths, edges);
 		
 		//print nodes with shortest paths
 		System.out.println("Shortest path table from root A:");
-		graph.printNodes(nodePaths);
+		System.out.println(graph.toString(nodePaths));
 	}
 }
